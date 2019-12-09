@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7527507794666741791}
+  - component: {fileID: 5471036232004934575}
+  - component: {fileID: 2108478988}
+  - component: {fileID: 2108478989}
   m_Layer: 0
   m_Name: CactusSpawningPoint
   m_TagString: Untagged
@@ -31,6 +34,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5471036232004934575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215901165053825499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d65f9cd32dcbf9479f0a8f840c4875f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCost: 100
+--- !u!95 &2108478988
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215901165053825499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c3bf3282980d144f9f9321373d0f990, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2108478989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215901165053825499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f800fbf7a132a44d8389eeba760c599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 2957819560754136780, guid: 873411d15d57bf4409d769966ea1c24f,
+    type: 3}
+  shootingPoint: {fileID: 5535133632372753231}
 --- !u!1001 &7392767463198941162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46,7 +96,7 @@ PrefabInstance:
     - target: {fileID: 3046927456456319739, guid: c8d99737199eadb46bdb9853b8743352,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3046927456456319739, guid: c8d99737199eadb46bdb9853b8743352,
         type: 3}
@@ -96,13 +146,21 @@ PrefabInstance:
     - target: {fileID: 3046927456456319740, guid: c8d99737199eadb46bdb9853b8743352,
         type: 3}
       propertyPath: m_Name
-      value: Cactus
+      value: Body
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3046927456456319738, guid: c8d99737199eadb46bdb9853b8743352, type: 3}
+    - {fileID: 3046927456456319736, guid: c8d99737199eadb46bdb9853b8743352, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c8d99737199eadb46bdb9853b8743352, type: 3}
 --- !u!4 &5535133631158123793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3046927456456319739, guid: c8d99737199eadb46bdb9853b8743352,
+    type: 3}
+  m_PrefabInstance: {fileID: 7392767463198941162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5535133632372753231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3046927454987656357, guid: c8d99737199eadb46bdb9853b8743352,
     type: 3}
   m_PrefabInstance: {fileID: 7392767463198941162}
   m_PrefabAsset: {fileID: 0}
