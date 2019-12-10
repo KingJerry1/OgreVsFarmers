@@ -20,6 +20,14 @@ public class Attacker : MonoBehaviour
         UpdateAnimationState();
     }
 
+    private void Awake() {
+        FindObjectOfType<LevelController>().AttackerSpawden();
+    }
+
+    private void OnDestroy() {
+        FindObjectOfType<LevelController>().AttackerKilled();
+    }
+
     private void UpdateAnimationState() {
         if(!currentTarget) {
             GetComponent<Animator>().SetBool("isAttacking", false);
