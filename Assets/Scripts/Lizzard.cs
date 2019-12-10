@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class Lizzard : MonoBehaviour
 {
+    public AudioSource hitSound;
+
+    void Start() {
+        hitSound = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter2D(Collider2D otherCollider) {
         GameObject otherObject = otherCollider.gameObject;
 
         if (otherObject.GetComponent<Defender>()) {
             GetComponent<Attacker>().Attack(otherObject);
+            hitSound.Play();
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D otherCollider) {
+        hitSound.Stop();
     }
 }
