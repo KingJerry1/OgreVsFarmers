@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5471036232004934575}
   - component: {fileID: 2108478988}
   - component: {fileID: 2108478989}
+  - component: {fileID: 5101348803728172503}
+  - component: {fileID: -852151508694627247}
   m_Layer: 0
   m_Name: CactusSpawningPoint
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7215901165053825499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 5535133631158123793}
   m_Father: {fileID: 0}
@@ -46,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d65f9cd32dcbf9479f0a8f840c4875f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCost: 100
+  coinCost: 50
 --- !u!95 &2108478988
 Animator:
   serializedVersion: 3
@@ -81,6 +83,46 @@ MonoBehaviour:
   projectile: {fileID: 2957819560754136780, guid: 873411d15d57bf4409d769966ea1c24f,
     type: 3}
   shootingPoint: {fileID: 5535133632372753231}
+--- !u!61 &5101348803728172503
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215901165053825499}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.017645836}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0235276, y: 0.9882355}
+  m_EdgeRadius: 0
+--- !u!114 &-852151508694627247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215901165053825499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6117c2fb3b6d4114b819c6fb28b45c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 40
+  deathVFX: {fileID: 0}
 --- !u!1001 &7392767463198941162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -148,9 +190,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3046927456456319738, guid: c8d99737199eadb46bdb9853b8743352, type: 3}
-    - {fileID: 3046927456456319736, guid: c8d99737199eadb46bdb9853b8743352, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8d99737199eadb46bdb9853b8743352, type: 3}
 --- !u!4 &5535133631158123793 stripped
 Transform:

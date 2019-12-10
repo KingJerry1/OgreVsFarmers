@@ -8,7 +8,7 @@ public class DefenderSpawner : MonoBehaviour
     Defender defender;
 
     private void OnMouseDown() {
-        SpawnDefender(GetSquareClicked());
+        AttemptToPlaceDefenderAt(GetSquareClicked());
     }
 
     private Vector2 GetSquareClicked() {
@@ -20,6 +20,15 @@ public class DefenderSpawner : MonoBehaviour
 
     public void SetSelectedDefender(Defender defenderToSelect) {
         defender = defenderToSelect;
+    }
+
+    private void AttemptToPlaceDefenderAt(Vector2 grindPos) {
+        var CoinDisplay = FindObjectOfType<CoinDisplay>();
+        int defenderCost = defender.GetCoinCost();
+        if(CoinDisplay.HaveEnoughtCoins(defenderCost)) {
+            SpawnDefender(grindPos);
+            CoinDisplay.SpendCoins(defenderCost);
+        }
     }
 
     private Vector2 SnapToGrid(Vector2 rawWorldPos) {
